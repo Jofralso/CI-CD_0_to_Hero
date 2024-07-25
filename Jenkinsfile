@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/wangoimwangi/jenkins-CICD.git'
+        git branch: 'main', url: 'https://github.com/Jofralso/ci_cd_Tutorial.git'
       }
     }
     stage('Build and Test') {
@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "hhttp://192.168.1.207:9000"
+        SONAR_URL = "http://192.168.1.207:9000"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
