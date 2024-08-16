@@ -37,45 +37,6 @@ function menu() {
                     case $ci_choice in
                         1)
                             install_git
-                            ;;#!/bin/bash
-
-# Function for menu
-function menu() {
-    echo "1. Install all"
-    echo "2. Install single tool"
-    echo "3. Uninstall all"
-    echo "4. Uninstall single tool"
-    read -p "Enter your choice: " choice
-
-    case $choice in
-        1)
-            sudo rm /etc/apt/sources.list.d/grafana.list
-            echo "Installing all tools..."
-            install_git
-            install_ansible
-            install_docker
-            install_grafana
-            install_jenkins
-            install_prometheus
-            install_zuul
-            install_kubernetes
-            install_maven
-            ;;
-        2)
-            echo "Installing single tool..."
-            echo "1. CI Tools"
-            echo "2. CD Tools"
-            read -p "Enter your choice: " ci_cd_choice
-            case $ci_cd_choice in
-                1)
-                    echo "1. Git"
-                    echo "2. Ansible"
-                    echo "3. Prometheus"
-                    echo "4. Zuul"
-                    read -p "Enter your choice: " ci_choice
-                    case $ci_choice in
-                        1)
-                            install_git
                             ;;
                         2)
                             install_ansible
